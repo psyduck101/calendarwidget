@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <script src="lib/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+  </head>
+
+  <body>
+    <div class="widget-configuration">
+      <div id="daysOffCalendar-url">
+        <fieldset>
+          <label class="config-label">External party URL</label>
+          <div class="wrapper">
+            <input id="daysOffCalendar-url-input" class="input-text-box field" />
+          </div>
+        </fieldset>
+      </div>
+      <div id="daysOffCalendar-api-key">
+        <fieldset>
+          <label class="config-label">External party API key</label>
+          <div class="wrapper">
+            <input
+              id="daysOffCalendar-api-key-input"
+              class="input-text-box field"
+              type="password"
+            />
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <script type="text/javascript">
+      VSS.init({
+          explicitNotifyLoaded: true,
+          setupModuleLoader: true,
+          usePlatformScripts: true,
+          usePlatformStyles: true
+      });
+
+      VSS.ready(function () {
+          require(["dist/configuration"], function (configuration) { });
+      });
+  </script>
+  </body>
+</html>

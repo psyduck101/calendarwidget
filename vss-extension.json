@@ -1,0 +1,104 @@
+{
+  "manifestVersion": 1,
+  "id": "DaysOffCalendarWidget",
+  "version": "0.1.6",
+  "name": "Days off Calendar Widget",
+  "scopes": ["vso.work"],
+  "description": "Widget to show days off, based on external service",
+  "publisher": "geoduck",
+  "galleryFlags": ["Preview"],
+  "icons": {
+    "default": "static/images/logo.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "tags": [
+    "build",
+    "quality",
+    "vulnerability",
+    "dependency",
+    "dependency management"
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/psyduck101"
+  },
+  "branding": {
+    "color": "rgb(220, 235, 252)",
+    "theme": "light"
+  },
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "static/images",
+      "addressable": true
+    },
+    {
+      "path": "static/css/app.css",
+      "addressable": true
+    },
+    {
+      "path": "static/index.html",
+      "addressable": true
+    },
+    {
+      "path": "static/configuration.html",
+      "addressable": true
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    }
+  ],
+  "categories": ["Azure Pipelines"],
+  "contributions": [
+    {
+      "id": "DaysOffCalendarWidget",
+      "type": "ms.vss-dashboards-web.widget",
+      "targets": [
+        "ms.vss-dashboards-web.widget-catalog",
+        ".DaysOffCalendarWidget-Configuration"
+      ],
+      "properties": {
+        "name": "Days off Calendar Widget",
+        "description": "Widget to show days off, based on external service",
+        "uri": "static/index.html",
+        "isNameConfigurable": true,
+        "catalogIconUrl:": "static/images/logo.png",
+        "previewImageUrl": "static/images/logo.png",
+        "supportedSizes": [
+          {
+            "rowSpan": 1,
+            "columnSpan": 1
+          },
+          {
+            "rowSpan": 1,
+            "columnSpan": 2
+          },
+          {
+            "rowSpan": 2,
+            "columnSpan": 2
+          }
+        ],
+        "supportedScopes": ["project_team"]
+      }
+    },
+    {
+      "id": "DaysOffCalendarWidget-Configuration",
+      "type": "ms.vss-dashboards-web.widget-configuration",
+      "targets": ["ms.vss-dashboards-web.widget-configuration"],
+      "properties": {
+        "name": "Days off Calendar Widget Configuration",
+        "description": "Widget to show days off, based on external service",
+        "uri": "static/configuration.html"
+      }
+    }
+  ]
+}
